@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	set d to current date	set yyyy to year of d as text	set mm to text -2 through -1 of ("0" &amp; (month of d as integer))	set dd to text -2 through -1 of ("0" &amp; (day of d))	set datestring to yyyy &amp; "-" &amp; mm &amp; "-" &amp; dd	return datestringend run</string>
+					<string>on run {input, parameters}	return "dhochhauser"end run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -68,15 +68,15 @@
 				<key>Class Name</key>
 				<string>RunScriptAction</string>
 				<key>InputUUID</key>
-				<string>C4A10226-91A0-4A8B-8F58-9B469A04566B</string>
+				<string>873449F8-4CBC-4507-A48F-57A2CD40658E</string>
 				<key>Keywords</key>
 				<array>
 					<string>Run</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>DD4321D8-3020-4516-9507-8C945C3DC95E</string>
+				<string>16F3B795-574F-4FB1-A5B4-DBA892A2518D</string>
 				<key>UUID</key>
-				<string>83CB5C0C-1A36-4F13-9A6B-282FFFA67A38</string>
+				<string>3E3DA864-27AE-49EC-9A48-C3245A02B2CA</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -102,6 +102,8 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
@@ -138,7 +140,7 @@ end run</string>
 		<key>systemImageName</key>
 		<string>NSActionTemplate</string>
 		<key>useAutomaticInputType</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>workflowTypeIdentifier</key>
 		<string>com.apple.Automator.servicesMenu</string>
 	</dict>
