@@ -25,7 +25,7 @@
 					</array>
 				</dict>
 				<key>AMActionVersion</key>
-				<string>1.0.2</string>
+				<string>1.0</string>
 				<key>AMApplication</key>
 				<array>
 					<string>Automator</string>
@@ -45,18 +45,29 @@
 					</array>
 				</dict>
 				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<string>/System/Library/Automator/Run JavaScript.action</string>
 				<key>ActionName</key>
-				<string>Run AppleScript</string>
+				<string>Run JavaScript</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	set nl to "\n"		set pieces to theSplit(input as string, ":")	set {groupId, artifactId, versionId} to {item 1, item 2, item 3} of pieces	set assembledString to "&lt;dependency&gt;" &amp; nl &amp; "&lt;groupId&gt;" &amp; groupId &amp; "&lt;/groupId&gt;" &amp; nl &amp; "&lt;artifactId&gt;" &amp; artifactId &amp; "&lt;/artifactId&gt;" &amp; nl &amp; "&lt;version&gt;" &amp; versionId &amp; "&lt;/version&gt;" &amp; nl &amp; "&lt;/dependency&gt;"		return assembledStringend runon theSplit(theString, theDelimiter)	-- save delimiters to restore old settings	set oldDelimiters to AppleScript's text item delimiters	-- set delimiters to delimiter to be used	set AppleScript's text item delimiters to theDelimiter	-- create the array	set theArray to every text item of theString	-- restore the old setting	set AppleScript's text item delimiters to oldDelimiters	-- return the result	return theArrayend theSplit</string>
+					<string>function run(input, parameters) {
+	const nl = "\n";	
+	const [groupId, artifactId, versionId] = String(input).split(":");
+	
+	const str =
+		"&lt;dependency&gt;" + nl
+		+ "&lt;groupId&gt;" + groupId + "&lt;/groupId&gt;" + nl
+		+ "&lt;artifactId&gt;" + artifactId + "&lt;/artifactId&gt;" + nl
+		+ "&lt;version&gt;" + versionId + "&lt;/version&gt;" + nl
+		+ "&lt;/dependency&gt;";
+		
+	return str;}</string>
 				</dict>
 				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.RunScript</string>
+				<string>com.apple.Automator.RunJavaScript</string>
 				<key>CFBundleVersion</key>
-				<string>1.0.2</string>
+				<string>1.0</string>
 				<key>CanShowSelectedItemsWhenRun</key>
 				<false/>
 				<key>CanShowWhenRun</key>
@@ -66,17 +77,18 @@
 					<string>AMCategoryUtilities</string>
 				</array>
 				<key>Class Name</key>
-				<string>RunScriptAction</string>
+				<string>RunJavaScriptAction</string>
 				<key>InputUUID</key>
-				<string>99549573-8EA4-4BE3-B362-285B17368ED8</string>
+				<string>ADDD18A4-64B7-4713-9239-C37C7BA44A53</string>
 				<key>Keywords</key>
 				<array>
 					<string>Run</string>
+					<string>JavaScript</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>75455BAB-AA3A-46BC-8980-3A8E36CA6D57</string>
+				<string>06E1A9A6-C478-4EFD-9D4A-337B51CCF540</string>
 				<key>UUID</key>
-				<string>C60BB492-D364-4679-93EE-2D025EB5F502</string>
+				<string>515649CA-7B87-4AA2-AA59-36753DBF7EEA</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -86,12 +98,12 @@
 					<key>0</key>
 					<dict>
 						<key>default value</key>
-						<string>on run {input, parameters}
+						<string>function run(input, parameters) {
 	
-	(* Your script goes here *)
-	
-	return input
-end run</string>
+	// Your script goes here
+
+	return input;
+}</string>
 						<key>name</key>
 						<string>source</string>
 						<key>required</key>
@@ -107,9 +119,9 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>300.500000:619.000000</string>
+				<string>300.500000:611.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+				<string>/System/Library/Automator/Run JavaScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
